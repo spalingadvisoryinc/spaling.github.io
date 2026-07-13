@@ -1,1 +1,1 @@
-spalingadvisory
+spalingadvisoryinc
