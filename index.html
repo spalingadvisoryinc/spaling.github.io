@@ -65,15 +65,110 @@
     .footer-grid{display:flex;align-items:center;justify-content:space-between;gap:22px;color:var(--slate);font-size:.9rem}.footer-links{display:flex;flex-wrap:wrap;gap:20px}.footer-links a:hover{color:var(--purple)}
     @media(max-width:900px){.nav-links{position:absolute;top:80px;left:0;right:0;display:none;flex-direction:column;align-items:flex-start;gap:18px;padding:24px;border-bottom:1px solid var(--line);background:#fff}.nav-links.open{display:flex}.menu-toggle{display:block}.hero-grid,.about-grid,.contact-panel{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.credibility-grid{grid-template-columns:repeat(2,1fr)}.profile-card{position:static}.contact-actions{justify-content:flex-start}}
     @media(max-width:680px){.container{width:min(calc(100% - 28px),var(--max-width))}.hero{padding:74px 0 68px}.hero h1{font-size:clamp(2.8rem,16vw,4.15rem)}.section{padding:74px 0}.services-grid,.difference-grid,.credentials,.proof-grid,.credibility-grid{grid-template-columns:1fr}.hero-actions,.contact-actions{flex-direction:column}.button{width:100%}.philosophy-panel,.contact-panel{padding:36px 24px}.footer-grid{align-items:flex-start;flex-direction:column}}
+
+  
+    .brand-split {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 700px;
+    }
+
+    .brand-shield {
+      width: auto;
+      height: 62px;
+      flex: 0 0 auto;
+    }
+
+    .brand-wordmark {
+      width: min(100%, 590px);
+      height: 58px;
+      object-fit: contain;
+      object-position: left center;
+      flex: 1 1 auto;
+      min-width: 250px;
+    }
+
+    @media (max-width: 900px) {
+      .brand-split {
+        max-width: calc(100% - 62px);
+        gap: 10px;
+      }
+
+      .brand-shield {
+        height: 50px;
+      }
+
+      .brand-wordmark {
+        height: 44px;
+        min-width: 160px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .brand-shield {
+        height: 43px;
+      }
+
+      .brand-wordmark {
+        height: 37px;
+        min-width: 125px;
+      }
+    }
+
+  
+    .brand-split {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 760px;
+    }
+
+    .brand-shield {
+      height: 64px;
+      width: auto;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .brand-wordmark {
+      height: 62px;
+      width: auto;
+      max-width: 600px;
+      flex: 1 1 auto;
+      min-width: 260px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    @media (max-width: 900px) {
+      .brand-split { max-width: calc(100% - 64px); gap: 10px; }
+      .brand-shield { height: 50px; }
+      .brand-wordmark { height: 46px; min-width: 160px; }
+    }
+
+    @media (max-width: 540px) {
+      .brand-shield { height: 42px; }
+      .brand-wordmark { height: 38px; min-width: 120px; }
+    }
+
   </style>
 </head>
 <body>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="#top" aria-label="Spaling Advisory home">
-      <div class="brand-mark" aria-hidden="true"><span>S</span></div>
-      <div class="brand-text">SPALING<small>Cybersecurity Advisory</small></div>
-    </a>
+    
+
+<a class="brand brand-split" href="#top" aria-label="Spaling Advisory home">
+  <img class="brand-shield" src="images/spaling-shield.png" alt="">
+  <img class="brand-wordmark" src="images/spaling-wordmark.png" alt="Spaling Advisory, Executive Cybersecurity Advisory">
+</a>
+
+
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#services">Services</a>
@@ -88,7 +183,7 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow">Executive Cybersecurity Advisory</div>
+      
       <h1>The truth between the <span>dashboard</span> and the boardroom.</h1>
       <p class="hero-copy">Independent advice that works alongside your internal teams and trusted technology partners. Helping organizations of every size, including small businesses, non-profits, and large enterprises, understand cyber risk, make informed decisions, and build practical resilience.</p>
       
