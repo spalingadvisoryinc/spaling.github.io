@@ -156,7 +156,141 @@
       .brand-wordmark { height: 38px; min-width: 120px; }
     }
 
-  </style>
+  
+/* Correct text wordmark header */
+.brand.brand-split{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex:1 1 auto;
+  min-width:0;
+  max-width:760px;
+  font-weight:inherit;
+  letter-spacing:normal;
+}
+
+.brand-shield{
+  display:block;
+  height:64px;
+  width:auto;
+  flex:0 0 auto;
+  object-fit:contain;
+}
+
+.brand-wordmark-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  flex:1 1 auto;
+  min-width:0;
+  max-width:620px;
+  line-height:1;
+}
+
+.brand-main-line{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  white-space:nowrap;
+  font-weight:850;
+  letter-spacing:.14em;
+  font-size:clamp(1.15rem,2vw,1.9rem);
+}
+
+.brand-spaling{color:var(--purple);}
+.brand-advisory{color:var(--green);}
+
+.brand-rule{
+  display:block;
+  width:100%;
+  height:3px;
+  margin:8px 0 7px;
+  border-radius:999px;
+  background:var(--orange);
+}
+
+.brand-subtitle{
+  color:var(--charcoal);
+  font-size:clamp(.58rem,.9vw,.82rem);
+  font-weight:700;
+  letter-spacing:.11em;
+  white-space:nowrap;
+}
+
+@media (max-width:900px){
+  .brand.brand-split{
+    max-width:calc(100% - 64px);
+    gap:10px;
+  }
+
+  .brand-shield{height:50px;}
+
+  .brand-main-line{
+    gap:9px;
+    letter-spacing:.1em;
+  }
+
+  .brand-rule{margin:6px 0 5px;}
+  .brand-subtitle{letter-spacing:.08em;}
+}
+
+@media (max-width:600px){
+  .brand-shield{height:42px;}
+
+  .brand-wordmark-text{max-width:250px;}
+
+  .brand-main-line{
+    gap:7px;
+    font-size:.95rem;
+    letter-spacing:.08em;
+  }
+
+  .brand-subtitle{
+    font-size:.48rem;
+    letter-spacing:.06em;
+  }
+
+  .brand-rule{
+    height:2px;
+    margin:5px 0 4px;
+  }
+}
+
+
+    .contact-actions{
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:center;
+      gap:24px;
+    }
+
+    .contact-shield{
+      display:block;
+      width:auto;
+      height:111px;
+      object-fit:contain;
+    }
+
+    @media(max-width:900px){
+      .contact-actions{
+        justify-content:flex-start;
+        align-items:center;
+      }
+    }
+
+    @media(max-width:680px){
+      .contact-actions{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .contact-shield{
+        height:90px;
+      }
+    }
+
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -165,7 +299,14 @@
 
 <a class="brand brand-split" href="#top" aria-label="Spaling Advisory home">
   <img class="brand-shield" src="images/spaling-shield.png" alt="">
-  <img class="brand-wordmark" src="images/spaling-wordmark.png" alt="Spaling Advisory, Executive Cybersecurity Advisory">
+  <span class="brand-wordmark-text">
+    <span class="brand-main-line">
+      <span class="brand-spaling">SPALING</span>
+      <span class="brand-advisory">ADVISORY</span>
+    </span>
+    <span class="brand-rule"></span>
+    <span class="brand-subtitle">EXECUTIVE CYBERSECURITY ADVISORY</span>
+  </span>
 </a>
 
 
@@ -270,7 +411,10 @@
 
 <section class="contact" id="contact"><div class="container"><div class="contact-panel">
   <div><h2>Need an experienced perspective on a difficult cyber problem?</h2><p>Start with a straightforward conversation about the issue, the context, and what useful support would actually look like.</p></div>
-  <div class="contact-actions"><a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a></div>
+  <div class="contact-actions">
+    <img class="contact-shield" src="images/spaling-shield.png" alt="Spaling Advisory Shield">
+    <a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a>
+  </div>
 </div></div></section>
 </main>
 
@@ -280,9 +424,7 @@
       <a href="#proof">Speaking &amp; Technical</a>
       <a href="mailto:michael@spaling.ca">Contact</a>
     </div></div>
-<div style="text-align:center;padding-top:1rem;">
-  <img src="images/spaling-shield.png" alt="Spaling Advisory Shield" style="height:42px;width:auto;opacity:.9;">
-</div>
+
 </footer>
 
 <script>
