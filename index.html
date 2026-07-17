@@ -60,7 +60,13 @@
     .philosophy{padding:90px 0}.philosophy-panel{padding:54px;border:1px solid rgba(74,7,149,.13);border-radius:28px;background:radial-gradient(circle at 90% 14%,rgba(120,174,29,.07),transparent 25%),var(--purple-soft)}
     .philosophy-panel blockquote{max-width:920px;color:var(--purple-dark);font-size:clamp(2rem,4.3vw,3.55rem);font-weight:850;line-height:1.08;letter-spacing:-.045em}.philosophy-panel p{max-width:790px;margin-top:22px;color:var(--slate);font-size:1.08rem}
     .contact{padding:0 0 96px}.contact-panel{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:48px;padding:58px;border-radius:28px;color:#fff;background:radial-gradient(circle at 92% 14%,rgba(74,7,149,.22),transparent 26%),var(--charcoal)}
-    .contact-panel h2{margin-bottom:15px;font-size:clamp(2rem,4.2vw,3.45rem);line-height:1.05;letter-spacing:-.045em}.contact-panel p{color:#c9cdd3}.contact-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:14px}
+    .contact-panel h2{margin-bottom:15px;font-size:clamp(2rem,4.2vw,3.45rem);line-height:1.05;letter-spacing:-.045em}.contact-panel p{color:#c9cdd3}.contact-actions{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
     .contact .button-secondary{color:#fff;border-color:rgba(255,255,255,.24);background:transparent}footer{padding:34px 0;border-top:1px solid var(--line)}
     .footer-grid{display:flex;align-items:center;justify-content:space-between;gap:22px;color:var(--slate);font-size:.9rem}.footer-links{display:flex;flex-wrap:wrap;gap:20px}.footer-links a:hover{color:var(--purple)}
     @media(max-width:900px){.nav-links{position:absolute;top:80px;left:0;right:0;display:none;flex-direction:column;align-items:flex-start;gap:18px;padding:24px;border-bottom:1px solid var(--line);background:#fff}.nav-links.open{display:flex}.menu-toggle{display:block}.hero-grid,.about-grid,.contact-panel{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.credibility-grid{grid-template-columns:repeat(2,1fr)}.profile-card{position:static}.contact-actions{justify-content:flex-start}}
@@ -265,12 +271,7 @@
       gap:24px;
     }
 
-    .contact-shield{
-      display:block;
-      width:auto;
-      height:111px;
-      object-fit:contain;
-    }
+    
 
     @media(max-width:900px){
       .contact-actions{
@@ -285,10 +286,15 @@
         align-items:center;
       }
 
-      .contact-shield{
-        height:90px;
-      }
+      
     }
+
+
+.contact-panel .contact-actions a.button.button-primary[href^="mailto:"]{
+  min-height:58px;
+  padding:0 30px;
+  font-size:1.04rem;
+}
 
 </style>
 </head>
@@ -412,7 +418,6 @@
 <section class="contact" id="contact"><div class="container"><div class="contact-panel">
   <div><h2>Need an experienced perspective on a difficult cyber problem?</h2><p>Start with a straightforward conversation about the issue, the context, and what useful support would actually look like.</p></div>
   <div class="contact-actions">
-    <img class="contact-shield" src="images/spaling-shield.png" alt="Spaling Advisory Shield">
     <a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a>
   </div>
 </div></div></section>
