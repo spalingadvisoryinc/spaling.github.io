@@ -156,89 +156,6 @@
       .brand-wordmark { height: 38px; min-width: 120px; }
     }
 
-  
-    .brand-wordmark-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1 1 auto;
-      min-width: 0;
-      max-width: 620px;
-      line-height: 1;
-    }
-
-    .brand-main-line {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      white-space: nowrap;
-      font-weight: 850;
-      letter-spacing: 0.14em;
-      font-size: clamp(1.15rem, 2vw, 1.9rem);
-    }
-
-    .brand-spaling {
-      color: var(--purple);
-    }
-
-    .brand-advisory {
-      color: var(--green);
-    }
-
-    .brand-rule {
-      display: block;
-      width: 100%;
-      height: 3px;
-      margin: 8px 0 7px;
-      border-radius: 999px;
-      background: var(--orange);
-    }
-
-    .brand-subtitle {
-      color: var(--charcoal);
-      font-size: clamp(0.58rem, 0.9vw, 0.82rem);
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 900px) {
-      .brand-main-line {
-        gap: 9px;
-        letter-spacing: 0.1em;
-      }
-
-      .brand-rule {
-        margin: 6px 0 5px;
-      }
-
-      .brand-subtitle {
-        letter-spacing: 0.08em;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .brand-wordmark-text {
-        max-width: 250px;
-      }
-
-      .brand-main-line {
-        gap: 7px;
-        font-size: 0.95rem;
-        letter-spacing: 0.08em;
-      }
-
-      .brand-subtitle {
-        font-size: 0.48rem;
-        letter-spacing: 0.06em;
-      }
-
-      .brand-rule {
-        height: 2px;
-        margin: 5px 0 4px;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -248,14 +165,7 @@
 
 <a class="brand brand-split" href="#top" aria-label="Spaling Advisory home">
   <img class="brand-shield" src="images/spaling-shield.png" alt="">
-  <span class="brand-wordmark-text">
-    <span class="brand-main-line">
-      <span class="brand-spaling">SPALING</span>
-      <span class="brand-advisory">ADVISORY</span>
-    </span>
-    <span class="brand-rule"></span>
-    <span class="brand-subtitle">EXECUTIVE CYBERSECURITY ADVISORY</span>
-  </span>
+  <img class="brand-wordmark" src="images/spaling-wordmark.png" alt="Spaling Advisory, Executive Cybersecurity Advisory">
 </a>
 
 
@@ -275,17 +185,17 @@
     <div>
       
       <h1>The truth between the <span>dashboard</span> and the boardroom.</h1>
-      <p class="hero-copy">Independent advice that works alongside your internal teams and trusted technology partners. Helping organizations of every size, including small businesses, non-profits, and large enterprises, understand cyber risk, make informed decisions, and build practical resilience.</p>
+      <p class="hero-copy">Independent cybersecurity advice that works alongside your internal teams and trusted technology partners to help organizations understand cyber risk, make informed decisions, and build practical resilience.</p>
       
       <div class="hero-actions"><a class="button button-primary" href="#contact">Discuss your challenge</a><a class="button button-secondary" href="#services">See how I help</a></div>
       
     </div>
     <aside class="advisory-card">
-      <h2>How I support cybersecurity leaders</h2>
-      <p>Practical help with decisions that carry real operational, financial, and reputational consequences.</p>
+      <h2>How I help organizations make better cybersecurity decisions</h2>
+      
       <div class="signal"><div class="signal-icon">01</div><div><strong>Clarify the real risk</strong><p>Get beyond dashboards and technical language to understand what matters and what does not.</p></div></div>
       <div class="signal"><div class="signal-icon">02</div><div><strong>Challenge assumptions</strong><p>Test whether proposed controls, investments, and priorities are likely to reduce risk.</p></div></div>
-      <div class="signal"><div class="signal-icon">03</div><div><strong>Make informed decisions</strong><p>Turn technical reality into choices executives and boards can understand and act on.</p></div></div>
+      <div class="signal"><div class="signal-icon">03</div><div><strong>Make informed decisions</strong><p>Independent guidance that helps organizational leaders make informed cybersecurity decisions.</p></div></div>
     </aside>
   </div>
 </section>
@@ -293,12 +203,12 @@
 <section class="section" id="services"><div class="container">
   <div class="section-heading"><div class="eyebrow">How I Help</div><h2>Specific help for difficult cybersecurity decisions.</h2><p>Whether you're facing a cybersecurity challenge or simply looking for an independent perspective, here's how Spaling Advisory can help.</p></div>
   <div class="services-grid">
-    <article class="service-card"><div class="service-number">01 / EXECUTIVE ADVICE</div><h3>Executive and Board Advisory</h3><p>Briefings, decision support, risk discussions, and independent advice for CEOs, executive teams, boards, CIOs, and CISOs.</p></article>
-    <article class="service-card"><div class="service-number">02 / PROGRAM REVIEW</div><h3>Cybersecurity Program Review</h3><p>Independent assessment of governance, responsibilities, priorities, capabilities, reporting, and investment.</p></article>
-    <article class="service-card"><div class="service-number">03 / INCIDENTS</div><h3>Incident Readiness and Response</h3><p>Executive preparation, tabletop exercises, response advice, communications support, and post-incident review.</p></article>
-    <article class="service-card"><div class="service-number">04 / VALIDATION</div><h3>Risk and Control Validation</h3><p>A grounded second opinion on reported risks, proposed controls, vendor recommendations, and major cybersecurity investments.</p></article>
-    <article class="service-card"><div class="service-number">05 / LEADERSHIP</div><h3>CISO and Security Leader Support</h3><p>Confidential advice, mentoring, governance support, executive communication, and help working through complex leadership issues.</p></article>
-    <article class="service-card"><div class="service-number">06 / EDUCATION</div><h3>Workshops, Speaking, and Facilitation</h3><p>Executive education, conference presentations, panel moderation, simulations, and practical cybersecurity discussions.</p></article>
+    <article class="service-card"><div class="service-number">01 / EXECUTIVE ADVISORY</div><h3>Navigate Complex Decisions</h3><p>Independent advice for evaluating risk, weighing options, and making confident cybersecurity decisions.</p></article>
+    <article class="service-card"><div class="service-number">02 / CYBERSECURITY GOVERNANCE</div><h3>Clarify Accountability</h3><p>Define clear roles, improve oversight, and ensure cybersecurity supports organizational priorities.</p></article>
+    <article class="service-card"><div class="service-number">03 / VULNERABILITY MANAGEMENT</div><h3>Prioritize the Right Risks</h3><p>Help your organization identify, classify, and mitigate vulnerabilities and exposures before they become organizational risks.</p></article>
+    <article class="service-card"><div class="service-number">04 / EDUCATION</div><h3>Speaking, Workshops &amp; Facilitation</h3><p>Practical, engaging sessions that help leaders and teams build confidence in cybersecurity through keynotes, workshops, and facilitated discussions.</p></article>
+<article class="service-card"><div class="service-number">05 / INCIDENT LEADERSHIP</div><h3>Lead Through Uncertainty</h3><p>Guide organizational leaders through high-consequence cybersecurity events with experienced advice on investigations and coordination with legal counsel, law enforcement, and cyber insurance providers.</p></article>
+<article class="service-card"><div class="service-number">06 / SOUNDING BOARD</div><h3>A Trusted Advisor</h3><p>Ongoing strategic cybersecurity advice for organizational leaders who value an experienced sounding board for important decisions and emerging risks.</p></article>
   </div>
 </div></section>
 
@@ -360,7 +270,7 @@
 
 <section class="contact" id="contact"><div class="container"><div class="contact-panel">
   <div><h2>Need an experienced perspective on a difficult cyber problem?</h2><p>Start with a straightforward conversation about the issue, the context, and what useful support would actually look like.</p></div>
-  <div class="contact-actions"><a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a><a class="button button-secondary" href="https://spaling.ca">spaling.ca</a></div>
+  <div class="contact-actions"><a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a></div>
 </div></div></section>
 </main>
 
@@ -369,7 +279,11 @@
       <a href="#difference">Difference</a>
       <a href="#proof">Speaking &amp; Technical</a>
       <a href="mailto:michael@spaling.ca">Contact</a>
-    </div></div></footer>
+    </div></div>
+<div style="text-align:center;padding-top:1rem;">
+  <img src="images/spaling-shield.png" alt="Spaling Advisory Shield" style="height:42px;width:auto;opacity:.9;">
+</div>
+</footer>
 
 <script>
 const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav-links");
