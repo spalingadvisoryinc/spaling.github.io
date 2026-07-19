@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Spaling Advisory Inc. provides independent cybersecurity advice to executives, boards, CISOs, and technology leaders." />
-  <title>Spaling Advisory Inc. | Executive Cybersecurity Advisory</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Spaling Advisory Inc. provides independent cybersecurity advice to executives, boards, CISOs, and technology leaders." name="description"/>
+<title>Spaling Advisory Inc. | Executive Cybersecurity Advisory</title>
+<style>
     :root{
       --purple:#4a0795;--purple-dark:#310463;--purple-light:#8a4bc2;--purple-soft:#f5f1fa;
       --green:#78ae1d;--orange:#e9701a;--charcoal:#20242a;--slate:#646a73;
@@ -303,109 +304,133 @@
   }
 }
 
+
+/* Circular headshot in the contact panel */
+.contact-identity{
+  display:grid;
+  grid-template-columns:128px 1fr;
+  gap:22px;
+  align-items:center;
+}
+.contact-headshot{
+  width:128px;
+  height:128px;
+  overflow:hidden;
+  border:2px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 16px 34px rgba(0,0,0,.25);
+}
+.contact-headshot img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+}
+.contact-role{
+  display:block;
+  margin-top:7px;
+  color:rgba(255,255,255,.68);
+  font-size:.92rem;
+  font-weight:700;
+}
+@media(max-width:680px){
+  .contact-identity{
+    grid-template-columns:88px 1fr;
+    gap:16px;
+  }
+  .contact-headshot{
+    width:88px;
+    height:88px;
+  }
+}
 </style>
 </head>
 <body>
 <header class="site-header">
-  <div class="container nav">
-    
-
-<a class="brand brand-split" href="#top" aria-label="Spaling Advisory home">
-  <img class="brand-shield" src="images/spaling-shield.png" alt="">
-  <span class="brand-wordmark-text">
-    <span class="brand-main-line">
-      <span class="brand-spaling">SPALING</span>
-      <span class="brand-advisory">ADVISORY</span>
-    </span>
-    <span class="brand-rule"></span>
-    <span class="brand-subtitle">EXECUTIVE CYBERSECURITY ADVISORY</span>
-  </span>
+<div class="container nav">
+<a aria-label="Spaling Advisory home" class="brand brand-split" href="#top">
+<img alt="" class="brand-shield" src="images/spaling-shield.png"/>
+<span class="brand-wordmark-text">
+<span class="brand-main-line">
+<span class="brand-spaling">SPALING</span>
+<span class="brand-advisory">ADVISORY</span>
+</span>
+<span class="brand-rule"></span>
+<span class="brand-subtitle">EXECUTIVE CYBERSECURITY ADVISORY</span>
+</span>
 </a>
-
-
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#services">Services</a>
-      <a href="#difference">Approach</a>
-      <a href="#proof">Experience</a>
-      <a class="button button-primary" href="#contact">Start a conversation</a>
-    </nav>
-  </div>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav aria-label="Primary navigation" class="nav-links">
+<a href="#services">Services</a>
+<a href="#difference">Approach</a>
+<a href="#proof">Experience</a>
+<a class="button button-primary" href="#contact">Start a conversation</a>
+</nav>
+</div>
 </header>
-
 <main id="top">
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      
-      <h1>The truth between the <span>dashboard</span> and the boardroom.</h1>
-      <p class="hero-copy">Independent cybersecurity advice that works alongside your internal teams and trusted technology partners to help organizations understand cyber risk, make informed decisions, and build practical resilience.</p>
-      
-      
-    </div>
-    <aside class="advisory-card">
-      <h2>How I help organizations make better cybersecurity decisions</h2>
-      
-      <div class="signal"><div class="signal-icon">01</div><div><strong>Clarify the real risk</strong><p>Get beyond dashboards and technical language to understand what matters and what does not.</p></div></div>
-      <div class="signal"><div class="signal-icon">02</div><div><strong>Challenge assumptions</strong><p>Test whether proposed controls, investments, and priorities are likely to reduce risk.</p></div></div>
-      <div class="signal"><div class="signal-icon">03</div><div><strong>Make informed decisions</strong><p>Independent guidance that helps organizational leaders make informed cybersecurity decisions.</p></div></div>
-    </aside>
-  </div>
+<div class="container hero-grid">
+<div>
+<h1>The truth between the <span>dashboard</span> and the boardroom.</h1>
+<p class="hero-copy">Independent cybersecurity advice that works alongside your internal teams and trusted technology partners to help organizations understand cyber risk, make informed decisions, and build practical resilience.</p>
+</div>
+<aside class="advisory-card">
+<h2>How I help organizations make better cybersecurity decisions</h2>
+<div class="signal"><div class="signal-icon">01</div><div><strong>Clarify the real risk</strong><p>Get beyond dashboards and technical language to understand what matters and what does not.</p></div></div>
+<div class="signal"><div class="signal-icon">02</div><div><strong>Challenge assumptions</strong><p>Test whether proposed controls, investments, and priorities are likely to reduce risk.</p></div></div>
+<div class="signal"><div class="signal-icon">03</div><div><strong>Make informed decisions</strong><p>Independent guidance that helps organizational leaders make informed cybersecurity decisions.</p></div></div>
+</aside>
+</div>
 </section>
-
 <section class="section" id="services"><div class="container">
-  <div class="section-heading"><div class="eyebrow">How I Help</div><h2>Specific help for difficult cybersecurity decisions.</h2><p>Whether you're facing a cybersecurity challenge or simply looking for an independent perspective, here's how Spaling Advisory can help.</p></div>
-  <div class="services-grid">
-    <article class="service-card"><div class="service-number">01 / EXECUTIVE ADVISORY</div><h3>Navigate Complex Decisions</h3><p>Independent advice for evaluating risk, weighing options, and making confident cybersecurity decisions.</p></article>
-    <article class="service-card"><div class="service-number">02 / CYBERSECURITY GOVERNANCE</div><h3>Clarify Accountability</h3><p>Define clear roles, improve oversight, and ensure cybersecurity supports organizational priorities.</p></article>
-    <article class="service-card"><div class="service-number">03 / VULNERABILITY MANAGEMENT</div><h3>Prioritize the Right Risks</h3><p>Help your organization identify, classify, and mitigate vulnerabilities and exposures before they become organizational risks.</p></article>
-    <article class="service-card"><div class="service-number">04 / EDUCATION</div><h3>Speaking, Workshops &amp; Facilitation</h3><p>Practical, engaging sessions that help leaders and teams build confidence in cybersecurity through keynotes, workshops, and facilitated discussions.</p></article>
+<div class="section-heading"><div class="eyebrow">How I Help</div><h2>Specific help for difficult cybersecurity decisions.</h2><p>Whether you're facing a cybersecurity challenge or simply looking for an independent perspective, here's how Spaling Advisory can help.</p></div>
+<div class="services-grid">
+<article class="service-card"><div class="service-number">01 / EXECUTIVE ADVISORY</div><h3>Navigate Complex Decisions</h3><p>Independent advice for evaluating risk, weighing options, and making confident cybersecurity decisions.</p></article>
+<article class="service-card"><div class="service-number">02 / CYBERSECURITY GOVERNANCE</div><h3>Clarify Accountability</h3><p>Define clear roles, improve oversight, and ensure cybersecurity supports organizational priorities.</p></article>
+<article class="service-card"><div class="service-number">03 / VULNERABILITY MANAGEMENT</div><h3>Prioritize the Right Risks</h3><p>Help your organization identify, classify, and mitigate vulnerabilities and exposures before they become organizational risks.</p></article>
+<article class="service-card"><div class="service-number">04 / EDUCATION</div><h3>Speaking, Workshops &amp; Facilitation</h3><p>Practical, engaging sessions that help leaders and teams build confidence in cybersecurity through keynotes, workshops, and facilitated discussions.</p></article>
 <article class="service-card"><div class="service-number">05 / INCIDENT LEADERSHIP</div><h3>Lead Through Uncertainty</h3><p>Guide organizational leaders through high-consequence cybersecurity events with experienced advice on investigations and coordination with legal counsel, law enforcement, and cyber insurance providers.</p></article>
 <article class="service-card"><div class="service-number">06 / SOUNDING BOARD</div><h3>A Trusted Advisor</h3><p>Ongoing strategic cybersecurity advice for organizational leaders who value an experienced sounding board for important decisions and emerging risks.</p></article>
-  </div>
+</div>
 </div></section>
-
 <section class="section difference" id="difference"><div class="container">
-  <div class="section-heading"><div class="eyebrow">Before You Make Your Next Cybersecurity Decision</div><h2>Good advice considers more than the technology.</h2><p>The technology matters. So do the people, incentives, assumptions, governance, and organizational realities surrounding it. These principles inform every recommendation from Spaling Advisory.</p></div>
-  <div class="difference-grid">
-    <article class="difference-item"><h3>Technical Depth. Executive Perspective.</h3><p>Deep technical expertise combined with experience in security operations, architecture, governance, executive leadership and organizational decision-making brings both technical reality and organizational context to every decision.</p></article>
-    <article class="difference-item"><h3>Independent Judgment</h3><p>No software, managed service, or preferred vendor to sell. Recommendations are based on the problem, the risk, and what will create meaningful value for the organization.</p></article>
-    <article class="difference-item"><h3>Candour Over Comfort</h3><p>Clear advice about what is working, what is not, and where reporting, assumptions, or organizational dynamics may be obscuring the real risk.</p></article>
-    <article class="difference-item"><h3>People Before Theatre</h3><p>Cybersecurity decisions affect people, budgets, operations, accountability, and culture. Advice is grounded in those realities and designed to work within them.</p></article>
-  </div>
+<div class="section-heading"><div class="eyebrow">Before You Make Your Next Cybersecurity Decision</div><h2>Good advice considers more than the technology.</h2><p>The technology matters. So do the people, incentives, assumptions, governance, and organizational realities surrounding it. These principles inform every recommendation from Spaling Advisory.</p></div>
+<div class="difference-grid">
+<article class="difference-item"><h3>Technical Depth. Executive Perspective.</h3><p>Deep technical expertise combined with experience in security operations, architecture, governance, executive leadership and organizational decision-making brings both technical reality and organizational context to every decision.</p></article>
+<article class="difference-item"><h3>Independent Judgment</h3><p>No software, managed service, or preferred vendor to sell. Recommendations are based on the problem, the risk, and what will create meaningful value for the organization.</p></article>
+<article class="difference-item"><h3>Candour Over Comfort</h3><p>Clear advice about what is working, what is not, and where reporting, assumptions, or organizational dynamics may be obscuring the real risk.</p></article>
+<article class="difference-item"><h3>People Before Theatre</h3><p>Cybersecurity decisions affect people, budgets, operations, accountability, and culture. Advice is grounded in those realities and designed to work within them.</p></article>
+</div>
 </div></section>
-
-
 <section class="section proof" id="proof">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Background</div>
-      <h2>Experience across every level of cybersecurity.</h2>
-      <p>Cybersecurity is a risk management industry built on people, process, and technology. My background spans all three, from deep technical expertise to executive leadership, governance, education, research, public speaking, and community leadership.</p>
-      <p style="margin-top:24px">
-        <a class="button button-primary" href="experience.html">Explore My Experience →</a>
-      </p>
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Background</div>
+<h2>Experience across every level of cybersecurity.</h2>
+<p>Cybersecurity is a risk management industry built on people, process, and technology. My background spans all three, from deep technical expertise to executive leadership, governance, education, research, public speaking, and community leadership.</p>
+<p style="margin-top:24px">
+<a class="button button-primary" href="experience.html">Explore My Experience →</a>
+</p>
+</div>
+</div>
 </section>
-
 <section class="contact" id="contact"><div class="container"><div class="contact-panel">
-  <div><h2>Let's start a conversation.</h2><p>Whether you're looking for advice, a sounding board, a speaker, or simply another perspective, I'd be happy to hear what you're working on.</p></div>
-  <div class="contact-actions">
-    <a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a>
-  </div>
+<div class="contact-identity"><div class="contact-headshot"><img alt="Michael Spaling" loading="lazy" src="images/michael-spaling-headshot.jpg"/></div><div><h2>Let's start a conversation.</h2><p>Whether you're looking for advice, a sounding board, a speaker, or simply another perspective, I'd be happy to hear what you're working on.</p><span class="contact-role">Michael Spaling · Founder &amp; Principal Consultant</span></div></div>
+<div class="contact-actions">
+<a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a>
+</div>
 </div></div></section>
 </main>
-
 <footer><div class="container footer-grid"><div>© <span id="year"></span> Spaling Advisory Inc. All rights reserved.</div><div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#difference">Approach</a>
-      <a href="#proof">Experience</a>
-      <a href="mailto:michael@spaling.ca">Contact</a>
-    </div></div>
-
+<a href="#services">Services</a>
+<a href="#difference">Approach</a>
+<a href="#proof">Experience</a>
+<a href="mailto:michael@spaling.ca">Contact</a>
+</div></div>
 </footer>
-
 <script>
 const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav-links");
 toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",open);toggle.textContent=open?"✕":"☰"});
