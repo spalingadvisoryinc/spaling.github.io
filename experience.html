@@ -181,19 +181,32 @@ transition:transform .2s ease}
   }
 }
 
+
+/* Header branding aligned with the current index page */
+.nav{min-height:68px !important;display:flex;align-items:center;justify-content:flex-start;gap:0}
+.brand.brand-logo{display:flex;align-items:center;flex:0 0 auto;margin:0;max-width:none}
+.brand-logo-image{display:block;width:auto;height:62px !important;max-width:340px !important;object-fit:contain;image-rendering:auto}
+.nav-links{flex:1 1 auto;display:flex;align-items:center;justify-content:flex-start;gap:26px !important;margin-left:42px !important;color:#575c65;font-size:.94rem !important;font-weight:500 !important}
+.nav-links .button{margin-left:auto;min-height:52px !important;padding:0 24px !important;font-size:.94rem !important;font-weight:800 !important}
+@media (max-width:900px){
+  .nav{position:relative;min-height:68px !important;justify-content:space-between !important}
+  .brand.brand-logo{max-width:calc(100% - 60px)}
+  .brand-logo-image{height:54px !important;max-width:300px !important}
+  .menu-toggle{display:block !important;flex:0 0 auto;position:relative;z-index:102}
+  .nav-links{position:absolute !important;top:68px !important;left:0 !important;right:0 !important;width:100% !important;display:none !important;flex-direction:column !important;align-items:stretch !important;justify-content:flex-start !important;gap:0 !important;margin:0 !important;padding:12px 20px 20px !important;border-bottom:1px solid var(--line);background:#fff;box-shadow:0 18px 34px rgba(32,36,42,.10)}
+  .nav-links.open{display:flex !important}
+  .nav-links>a:not(.button){display:block;width:100%;padding:14px 4px;border-bottom:1px solid var(--line)}
+  .nav-links .button{width:100% !important;margin:16px 0 0 !important}
+}
+@media(max-width:540px){.brand.brand-logo{max-width:220px}.brand-logo-image{height:46px !important;max-width:220px !important}}
+@media (min-width:901px){.menu-toggle{display:none !important}}
+
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="container nav">
-<a aria-label="Spaling Advisory home" class="brand brand-split" href="index.html">
-<img alt="" class="brand-shield" src="images/spaling-shield.png"/>
-<span class="brand-wordmark-text">
-<span class="brand-main-line"><span class="brand-spaling">SPALING</span><span class="brand-advisory">ADVISORY</span></span>
-<span class="brand-rule"></span>
-<span class="brand-subtitle">INDEPENDENT CYBERSECURITY ADVISORY</span>
-</span>
-</a>
+<a aria-label="Spaling Advisory home" class="brand brand-logo" href="index.html#top"><img alt="Spaling Advisory" class="brand-logo-image" src="images/spaling-advisory-logo-web.png"/></a>
 <button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">☰</button>
 <nav aria-label="Primary navigation" class="nav-links">
 <a href="index.html#services">Services</a>
