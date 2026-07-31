@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -345,22 +344,215 @@
     height:88px;
   }
 }
+
+/* Website header logo — extracted from the professional PowerPoint template */
+.brand.brand-logo{
+  display:flex;
+  align-items:center;
+  flex:0 1 420px;
+  min-width:0;
+  font-weight:inherit;
+  letter-spacing:normal;
+}
+.brand-logo-image{
+  display:block;
+  width:auto;
+  height:64px;
+  max-width:100%;
+  object-fit:contain;
+  object-position:left center;
+}
+.nav-links{
+  margin-left:auto;
+  color:#575c65;
+  font-weight:600;
+}
+@media(max-width:900px){
+  .brand.brand-logo{max-width:calc(100% - 62px)}
+  .brand-logo-image{height:54px}
+}
+@media(max-width:540px){
+  .brand.brand-logo{max-width:250px}
+  .brand-logo-image{height:46px}
+}
+
+
+/* Refined compact header */
+.nav{
+  min-height:72px;
+  gap:24px;
+}
+
+.brand.brand-logo{
+  flex:0 0 auto;
+  max-width:none;
+  margin-right:36px;
+}
+
+.brand-logo-image{
+  display:block;
+  width:auto;
+  height:56px;
+  max-width:330px;
+  object-fit:contain;
+}
+
+.nav-links{
+  flex:1 1 auto;
+  justify-content:flex-end;
+  margin-left:0;
+  gap:34px;
+  color:#575c65;
+  font-weight:600;
+}
+
+@media(max-width:900px){
+  .nav{min-height:68px}
+  .brand.brand-logo{
+    max-width:calc(100% - 60px);
+    margin-right:0;
+  }
+  .brand-logo-image{
+    height:48px;
+    max-width:280px;
+  }
+  .nav-links{top:68px}
+}
+
+@media(max-width:540px){
+  .brand.brand-logo{max-width:225px}
+  .brand-logo-image{
+    height:42px;
+    max-width:225px;
+  }
+}
+
+
+/* Header layout v2: navigation sits beside the logo; CTA anchors the right edge */
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:0;
+}
+
+.brand.brand-logo{
+  flex:0 0 auto;
+  margin:0;
+}
+
+.brand-logo-image{
+  height:54px;
+  width:auto;
+  max-width:300px;
+}
+
+.nav-links{
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:28px;
+  margin-left:42px;
+  color:#575c65;
+  font-weight:600;
+}
+
+.nav-links .button{
+  margin-left:auto;
+}
+
+@media(max-width:900px){
+  .nav{
+    min-height:68px;
+    justify-content:space-between;
+  }
+
+  .brand.brand-logo{
+    max-width:calc(100% - 60px);
+  }
+
+  .brand-logo-image{
+    height:46px;
+    max-width:260px;
+  }
+
+  .nav-links{
+    top:68px;
+    margin-left:0;
+  }
+
+  .nav-links .button{
+    margin-left:0;
+  }
+}
+
+@media(max-width:540px){
+  .brand.brand-logo{
+    max-width:220px;
+  }
+
+  .brand-logo-image{
+    height:40px;
+    max-width:220px;
+  }
+}
+
+
+/* Executive header refinement */
+.nav{
+  min-height:68px !important;
+}
+
+.brand-logo-image{
+  height:52px !important;
+  max-width:290px !important;
+}
+
+.nav-links{
+  gap:26px !important;
+  font-size:.94rem !important;
+  font-weight:500 !important;
+}
+
+.nav-links .button{
+  min-height:46px !important;
+  padding:0 20px !important;
+  font-size:.92rem !important;
+}
+
+/* Shorter CTA label spacing */
+
+
+/* Final header correction */
+.nav-links .button{
+  min-height:52px !important;
+  padding:0 24px !important;
+  font-size:.94rem !important;
+  font-weight:800 !important;
+}
+
+
+/* Larger, crisper logo */
+.brand-logo-image{
+  height:62px !important;
+  max-width:340px !important;
+  image-rendering:auto;
+}
+@media(max-width:900px){
+  .brand-logo-image{
+    height:54px !important;
+    max-width:300px !important;
+  }
+}
+
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="container nav">
-<a aria-label="Spaling Advisory home" class="brand brand-split" href="#top">
-<img alt="" class="brand-shield" src="images/spaling-shield.png"/>
-<span class="brand-wordmark-text">
-<span class="brand-main-line">
-<span class="brand-spaling">SPALING</span>
-<span class="brand-advisory">ADVISORY</span>
-</span>
-<span class="brand-rule"></span>
-<span class="brand-subtitle">INDEPENDENT CYBERSECURITY ADVISORY</span>
-</span>
-</a>
+<a aria-label="Spaling Advisory home" class="brand brand-logo" href="#top"><img alt="Spaling Advisory" class="brand-logo-image" src="images/spaling-advisory-logo-web.png"/></a>
 <button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">☰</button>
 <nav aria-label="Primary navigation" class="nav-links">
 <a href="#services">Services</a>
