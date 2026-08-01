@@ -470,12 +470,6 @@
   margin-left:auto;
 }
 
-.nav-divider{
-  color:#c8ccd2;
-  user-select:none;
-  pointer-events:none;
-  font-weight:400;
-}
 
 
 @media(max-width:900px){
@@ -619,6 +613,33 @@
   }
 }
 
+
+.linkedin-nav{
+  position:relative;
+  padding-left:26px;
+}
+
+.linkedin-nav::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:1px;
+  height:18px;
+  background:#c8ccd2;
+  transform:translateY(-50%);
+}
+
+@media(max-width:900px){
+  .linkedin-nav{
+    padding-left:4px;
+  }
+
+  .linkedin-nav::before{
+    display:none;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -630,8 +651,7 @@
 <a href="#services">Services</a>
 <a href="#difference">Approach</a>
 <a href="#proof">Experience</a>
-<span class="nav-divider" aria-hidden="true">│</span>
-<a href="https://www.linkedin.com/in/michael-spaling/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="linkedin-nav" href="https://www.linkedin.com/in/michael-spaling/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 <a class="button button-primary" href="#contact">Start a conversation</a>
 </nav>
 </div>

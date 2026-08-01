@@ -195,7 +195,7 @@ transition:transform .2s ease}
 .brand-logo-image{display:block;width:auto;height:62px !important;max-width:340px !important;object-fit:contain;image-rendering:auto}
 .nav-links{flex:1 1 auto;display:flex;align-items:center;justify-content:flex-start;gap:26px !important;margin-left:42px !important;color:#575c65;font-size:.94rem !important;font-weight:500 !important}
 .nav-links .button{margin-left:auto;min-height:52px !important;padding:0 24px !important;font-size:.94rem !important;font-weight:800 !important}
-.nav-divider{color:#c8ccd2;user-select:none;pointer-events:none;font-weight:400;}
+
 @media (max-width:900px){
   .nav{position:relative;min-height:68px !important;justify-content:space-between !important}
   .brand.brand-logo{max-width:calc(100% - 60px)}
@@ -222,6 +222,33 @@ transition:transform .2s ease}
   }
 }
 
+
+.linkedin-nav{
+  position:relative;
+  padding-left:26px;
+}
+
+.linkedin-nav::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:1px;
+  height:18px;
+  background:#c8ccd2;
+  transform:translateY(-50%);
+}
+
+@media(max-width:900px){
+  .linkedin-nav{
+    padding-left:4px;
+  }
+
+  .linkedin-nav::before{
+    display:none;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -233,8 +260,7 @@ transition:transform .2s ease}
 <a href="index.html#services">Services</a>
 <a href="index.html#difference">Approach</a>
 <a aria-current="page" href="#top">Experience</a>
-<span class="nav-divider" aria-hidden="true">│</span>
-<a href="https://www.linkedin.com/in/michael-spaling/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="linkedin-nav" href="https://www.linkedin.com/in/michael-spaling/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 <a class="button button-primary" href="#contact">Start a conversation</a>
 </nav>
 </div>
