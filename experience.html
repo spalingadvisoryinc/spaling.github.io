@@ -201,6 +201,19 @@ transition:transform .2s ease}
 @media(max-width:540px){.brand.brand-logo{max-width:220px}.brand-logo-image{height:46px !important;max-width:220px !important}}
 @media (min-width:901px){.menu-toggle{display:none !important}}
 
+
+/* Keep the mobile header logo identical to the index page */
+@media (max-width:540px){
+  .brand.brand-logo{
+    max-width:calc(100% - 60px) !important;
+  }
+
+  .brand-logo-image{
+    height:54px !important;
+    max-width:300px !important;
+  }
+}
+
 </style>
 </head>
 <body>
