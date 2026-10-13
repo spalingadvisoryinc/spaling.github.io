@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="An apparent website defacement led to a JavaScript redirect, live SEO cloaking, and recovered PHP tools. The investigation shows why browser evidence, crawler responses, and file findings need to be tested separately." name="description"/>
-<title>SEO Cloaking and NOX in a WordPress Compromise | Spaling Advisory Inc.</title>
+<meta content="An investigation across three sites verified a JavaScript redirect, active SEO cloaking, and recovered PHP tools. Tracing each finding separately shows what the evidence established—and what remains under investigation." name="description"/>
+<title>Website Redirects SEO Cloaking and Recovered PHP Tools | Spaling Advisory Inc.</title>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -286,6 +286,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .nox-capabilities{margin:24px 0;padding:22px;background:var(--soft);border:1px solid var(--line);border-radius:12px}
 .note-publication{max-width:900px;padding:54px 0 64px}.note-publication h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-.04em;margin:18px 0}.note-publication .note-body{max-width:100%}.note-publication .note-excerpt{max-width:760px}.note-author{margin-top:16px;color:var(--slate);font-size:.9rem}
 
+.note-date{margin:-4px 0 16px;color:var(--slate);font-size:.85rem}
 </style>
 </head>
 <body>
@@ -303,114 +304,118 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 </nav>
 </div>
 </header>
-<main id="top"><div class="container"><article class="note-publication"><a class="text-link" href="../fieldnotes.html#nox-wordpress-compromise">← Field Notes</a><div class="note-meta"><span class="note-category">Website compromise &amp; investigation</span><time datetime="2026-10-12">October 12, 2026</time></div><h1>SEO Cloaking and NOX in a WordPress Compromise</h1><p class="note-excerpt">An apparent website defacement led to a JavaScript redirect, live SEO cloaking, and recovered PHP tools. The investigation shows why browser evidence, crawler responses, and file findings need to be tested separately.</p><p class="note-author">Michael Spaling · Founder &amp; Principal Consultant</p><div class="note-body" data-note-content>
+<main id="top"><div class="container"><article class="note-publication"><a class="text-link" href="../fieldnotes.html#nox-wordpress-compromise">← Field Notes</a><h1>Website Redirects SEO Cloaking and Recovered PHP Tools</h1><p class="note-date"><time datetime="2026-10-12">October 12, 2026</time></p><p class="note-excerpt">An investigation across three sites verified a JavaScript redirect, active SEO cloaking, and recovered PHP tools. Tracing each finding separately shows what the evidence established—and what remains under investigation.</p><p class="note-author">Michael Spaling · Founder &amp; Principal Consultant</p><div class="note-body" data-note-content>
 
 <h3>Executive Summary</h3>
-<p>Spaling Advisory received a referral for apparent website defacement. The investigation uncovered more than altered pages: a JavaScript redirect, active SEO cloaking, and malicious PHP tools. Chrome DevTools established how the redirect worked; comparing browser content with Google’s crawler response exposed a separate manipulation of search-engine content.</p>
-<p>The findings affected different websites within the engagement. Keeping those observations separate was essential: the redirect had a confirmed source file, while the recovered NOX tool demonstrated cloaking capabilities on another domain where its cloaking functions were inactive.</p>
-<h3>Trace the redirect in Chrome DevTools</h3>
-<p>One website intermittently sent visitors to an advertising destination. Spaling Advisory captured the browsing session in Chrome DevTools and examined the request sequence in the Network tab. The first question was whether the website returned an HTTP redirect or delivered code that redirected the browser after loading.</p>
-<p>The initial homepage request returned HTTP 200. Its response began with an external script reference, followed by a hosting control panel’s default test page. DevTools captured the external JavaScript as well: it assigned an advertising URL to window.location.href.</p>
+<p>Spaling Advisory received a referral for apparent website defacement. A separate visual defacement of legitimate pages was not independently established in the reviewed material. The investigation verified a JavaScript redirect, active SEO cloaking, and malicious PHP tools. Chrome DevTools established how the redirect worked; comparing browser content with Google’s crawler response exposed a separate manipulation of search-engine content.</p>
+<p>The findings came from three sites. The redirect on Site A had a confirmed source file. Active cloaking on Site B remains under investigation with the hosting provider. NOX was recovered from Site C and was not shown to cause Site B’s cloaking. Review relied on website dumps and recorded observations, without full server access.</p>
 <div class="note-table-wrap"><table>
 <thead><tr>
-<th scope="col">Network observation</th>
-<th scope="col">What it established</th>
+<th scope="col">Site</th>
+<th scope="col">Material reviewed</th>
+<th scope="col">Finding</th>
 </tr></thead><tbody>
 <tr>
-<td>Homepage returned HTTP 200 with a script reference</td>
-<td>The browser received a page containing the instruction to load external JavaScript</td>
+<td>Site A</td>
+<td>Browser capture, response HTML, document-root file and selected configuration</td>
+<td>Redirect traced to the script at the start of index.html</td>
 </tr>
 <tr>
-<td>Browser requested the external script</td>
-<td>The script reference in the returned HTML was followed during page loading</td>
+<td>Site B</td>
+<td>Full website dump, Search Console HTML and controlled responses</td>
+<td>Active crawler cloaking; Late.php recovered; cloaking implementation not identified</td>
 </tr>
 <tr>
-<td>Script set window.location.href</td>
-<td>The onward navigation was triggered by JavaScript, rather than an initial HTTP 301 or 302 response</td>
+<td>Site C</td>
+<td>Related-domain website dump, NOX source and recorded panel inspection; historical archive</td>
+<td>NOX recovered; panel reported inactive cloak vectors; archive also contained Site A’s redirect script</td>
 </tr>
 </tbody></table></div>
-
+<h3>Trace the redirect in Chrome DevTools</h3>
+<p>Site A intermittently sent visitors to an advertising destination. Spaling Advisory captured the browsing session in Chrome DevTools and examined the request sequence in the Network tab. The first question was whether the website returned an HTTP redirect or delivered code that redirected the browser after loading.</p>
+<p>The initial homepage request returned HTTP 200. Its response began with an external script reference, followed by a hosting control panel’s default test page. DevTools captured the external JavaScript as well: it assigned an advertising URL to window.location.href.</p>
 <p>The relevant response fragments are shown below with domains replaced by reserved placeholders.</p>
 <pre><code>&lt;script src=&quot;//script.example/&quot;&gt;&lt;/script&gt;</code></pre>
 <pre><code>window.location.href = &quot;https://redirect.example/&quot;;</code></pre>
 <h3>Follow the browser evidence back to the file</h3>
-<p>The script hostname provided a concrete search term. Review of the site’s document root found the same script at the start of index.html, followed by the default test page seen in DevTools. This connected the browser’s response to a malicious file within the website content.</p>
-<p>A historical copy of another website also contained the script. That extended the search for affected content, but did not establish that the archive caused the live redirect. The redirect was now explained; the abnormal search results still required a separate test.</p>
+<p>The script hostname provided a concrete search term. Review of Site A’s document root found the same script at the start of index.html, followed by the default test page seen in DevTools. This connected the browser’s response to a malicious file within the website content. The site was reachable and serving that file; why the default test page was present was not established. The same script appeared in a historical archive of Site C, but that archive was not shown to cause Site A’s live redirect.</p>
 <h3>Compare what visitors and Google received</h3>
-<p>Google search results displayed page code, while Bing results included gambling terms. Historical indexing was initially plausible. However, Search Console’s crawled HTML contained gambling links absent from the ordinary browser source of another website in the engagement.</p>
+<p>Google search results displayed page code, while Bing results included gambling terms. Historical indexing was initially plausible. However, Search Console’s crawled HTML contained gambling links absent from the ordinary browser source of Site B.</p>
 <p>The important distinction was between the content delivered in a response and what the browser displayed after processing it. The DevTools investigation had already shown why a page’s appearance alone was insufficient. Here, the discrepancy between browser source and crawler HTML made the requesting user agent the next variable to test.</p>
-<p>Spaling Advisory fetched the same homepage twice, saving the responses separately. The first request used curl’s default user agent. The second supplied a Googlebot user agent. Both saved files were searched for the same wl-main marker and gambling terms.</p>
-<figure><a href="assets/nox/image1.png" target="_blank" rel="noopener"><img src="assets/nox/image1.png" alt="Redacted PowerShell comparison showing no selected matches in the default response and gambling links in the Googlebot response." loading="lazy" decoding="async"></a></figure>
-<p class="figure-caption">Figure 1 PowerShell response comparison. Target URLs and local account names are redacted. The default request returned no matches for the selected patterns; the Googlebot request returned gambling links.</p>
+<p>Spaling Advisory fetched the Site B homepage twice, saving the responses separately. The first request used curl’s default user agent. The second supplied a Googlebot user agent. Both saved files were searched for the same wl-main marker and gambling terms.</p>
+<figure><a href="assets/nox/image1.png" target="_blank" rel="noopener"><img src="assets/nox/image1.png" alt="Redacted Site B visitor and Googlebot response comparison." loading="lazy" decoding="async"></a></figure>
+<p class="figure-caption">Figure 1 Site B PowerShell response comparison. Target URLs and local account names are redacted. The default request returned no matches for the selected patterns; the Googlebot request returned gambling links.</p>
 <p>Changing the user agent was enough to reproduce the gambling content from Spaling Advisory’s own connection. This moved the assessment beyond an old search result: the live website was still returning malicious content selectively. Reindexing alone could not correct search results while those responses continued.</p>
 <p>The negative result applied to the selected patterns in that response. It did not establish that every page, request condition, or website file was clean.</p>
 <h3>Search the files and review the PHP tools</h3>
-<p>Spaling Advisory searched the available website files for response markers, gambling terms, crawler handling, and PHP obfuscation. Those searches did not locate the implementation behind the active cloaking. Their coverage was limited to the supplied files and locations.</p>
-<p>YARA Core returned no reported matches. Full rules produced 10 matches across eight files. Code review identified Late.php, an unauthenticated uploader, and nox.php, a control panel for SEO cloaking. The significance came from their code, rather than the rule names alone.</p>
-<p>NOX was recovered server side under a different domain from the homepage used in the Googlebot comparison. Its cloaking functions were inactive when inspected, and its presence did not establish that it caused the active cloaking on the other website. The interface views below were prepared for analysis.</p>
-<div class="nox-capabilities">
-<figure><a href="assets/nox/image2.png" target="_blank" rel="noopener"><img src="assets/nox/image2.png" alt="NOX setup interface with identifying values and access token redacted." loading="lazy" decoding="async"></a></figure>
-<p><strong>Relevant NOX capabilities</strong></p>
-<p><strong>Crawler selection. </strong>The loader matches Google user agents on / and requires a lock and content file. Exclusions including curl, Playwright, and Chromium override that match.</p>
-<p><strong>Alternate response. </strong>It returns separate HTML, sends Vary: User-Agent, and exits. Hidden content may be stored outside the website root.</p>
-<p><strong>Delivery components. </strong>NOX can configure PHP prepend loading, modify index.php, or create a WordPress must-use plugin. These components can operate independently of the panel.</p>
-<figure><a href="assets/nox/image3.png" target="_blank" rel="noopener"><img src="assets/nox/image3.png" alt="NOX dashboard preview with illustrative runtime values and identifying values redacted." loading="lazy" decoding="async"></a></figure>
-</div>
+<p>Spaling Advisory did not have full server access. File searches used the full Site B website dump and the related Site C dump; Site A’s redirect was assessed from its browser capture, source file and selected configuration. These materials did not provide complete visibility into the provider’s server runtime. Identification of Site B’s active cloaking implementation is ongoing with the hosting provider.</p>
+<p>Searches for response markers, gambling terms, crawler handling, and PHP obfuscation did not locate the active cloaking implementation. A negative file search therefore did not rule out configuration, loaders, or delivery layers outside the reviewed material.</p>
+<p>The recursive YARA scan covered the Site B and Site C dumps. Core returned no reported matches; Full produced 10 matches across eight files: six matches in six Site B files, and four in two Site C files. Review identified Site B’s Late.php handler, which appears unauthenticated, and Site C’s NOX panel.</p>
+<p>Case notes recorded live inspection of Site C’s NOX panel displaying passive or absent cloaking vectors and absent loader files. This point-in-time panel observation did not establish that every delivery path was inactive. The views below were prepared for analysis and contain illustrative runtime values.</p>
+<div class="nox-capabilities"><figure><a href="assets/nox/image2.png" target="_blank" rel="noopener"><img src="assets/nox/image2.png" alt="Redacted NOX setup interface." loading="lazy" decoding="async"></a></figure><p>Reviewed PHP behaviour</p><p>Late.php uploader. Recorded source review identified POST fields upl_files and file_n and the move_uploaded_file() operation. The handler appears unauthenticated: no authentication or file-type checks appeared in the reviewed source. An external wrapper was not excluded; upload history was not established.</p><p>NOX request selection. Google user agents can receive alternate homepage HTML. Exclusions including curl, Playwright, and Chromium override that match.</p><p>NOX delivery. It sends Vary: User-Agent and exits after returning the alternate HTML. PHP prepend loading, index.php modification, or a must-use plugin can deliver content independently of the panel; content may be stored outside the website root.</p><figure><a href="assets/nox/image3.png" target="_blank" rel="noopener"><img src="assets/nox/image3.png" alt="NOX dashboard preview with illustrative runtime values." loading="lazy" decoding="async"></a></figure></div>
 <p class="figure-caption">Figure 2 NOX setup view and dashboard preview. Identifying values and the access token are redacted. Dashboard runtime values are illustrative.</p>
 <h3>Validate removal against the original symptoms</h3>
-<p>The investigation produced two different validation requirements. For the redirect, the delivered HTML must no longer reference the malicious script and the browser must no longer follow that navigation chain. For SEO cloaking, repeated visitor and crawler requests must return the intended content through the public delivery path.</p>
+<p>The investigation produced two different validation requirements. For Site A’s redirect, the delivered HTML must no longer reference the malicious script and the browser must no longer follow that navigation chain. For Site B’s SEO cloaking, repeated visitor and crawler requests must return the intended content through the public delivery path.</p>
 <p>File removal and signature scans support that work, but response testing determines whether the original symptoms remain. PHP configuration, loaders, must-use plugins, hidden content, and search-engine ownership artifacts also require review. Complete eradication was not established in the available evidence.</p>
 <h3>Appendix Hunting artifacts and indicators</h3>
-<p>Client identifiers are withheld. Observed response artifacts and recovered files are distinguished from capabilities derived from NOX source review; the latter are search leads, not proof of installation.</p>
+<p>Client identifiers are withheld. Site labels match the summary table. NOX-derived markers are search leads; deployment of the listed components was not confirmed. Filenames and configuration directives alone do not establish maliciousness.</p>
 <div class="note-table-wrap"><table>
 <thead><tr>
 <th scope="col">Artifact or marker</th>
+<th scope="col">Site</th>
 <th scope="col">Evidence status</th>
 <th scope="col">Hunting use</th>
 </tr></thead><tbody>
 <tr>
-<td>Script reference in index.html and window.location.href</td>
-<td>Confirmed redirect mechanism</td>
-<td>Trace HTML, script requests, and resulting navigation</td>
+<td>index.html script reference; window.location.href</td>
+<td>A; C archive</td>
+<td>Source confirmed on A; historical copy on C</td>
+<td>Trace HTML, scripts and navigation</td>
 </tr>
 <tr>
 <td>wl-main with gambling links</td>
-<td>Observed crawler response</td>
-<td>Compare responses under different user agents</td>
+<td>B</td>
+<td>Observed Googlebot-user-agent response</td>
+<td>Compare user-agent responses</td>
 </tr>
 <tr>
 <td>nox.php</td>
-<td>Recovered and reviewed</td>
-<td>Inspect cloaking manager and related components</td>
+<td>C</td>
+<td>Recovered; recorded panel reported inactive vectors</td>
+<td>Review code and delivery paths</td>
 </tr>
 <tr>
 <td>Late.php, upl_files, file_n</td>
-<td>Recovered and reviewed</td>
-<td>Inspect unauthenticated upload handling</td>
+<td>B</td>
+<td>Handler appears unauthenticated; uploads not established</td>
+<td>Inspect handler and surrounding access controls</td>
 </tr>
 <tr>
-<td>wp-comments-post-loader.php, nox-google-bot-bypass.php</td>
-<td>NOX capabilities</td>
-<td>Trace loaders and must-use plugins</td>
+<td>wp-comments-post-loader.php; nox-google-bot-bypass.php</td>
+<td>C source</td>
+<td>Capability; deployment not confirmed</td>
+<td>Hunt loaders and must-use plugins</td>
 </tr>
 <tr>
-<td>NOX-CLOAK-START, NOX-HT-START, auto_prepend_file</td>
-<td>NOX search leads</td>
+<td>NOX-CLOAK-START; NOX-HT-START; auto_prepend_file</td>
+<td>C source</td>
+<td>Search leads; deployment not confirmed</td>
 <td>Inspect PHP entry points and configuration</td>
 </tr>
 <tr>
-<td>.render-cache, render.lock, .nox-content, .nox-*</td>
-<td>NOX storage and activation capabilities</td>
-<td>Include hidden paths and external content storage</td>
+<td>.render-cache; render.lock; .nox-content; .nox-*</td>
+<td>C source</td>
+<td>Storage and activation leads</td>
+<td>Include hidden and external paths</td>
 </tr>
 <tr>
-<td>google*.html, google-site-verification</td>
-<td>Verification search leads</td>
-<td>Reconcile files with authorized ownership</td>
+<td>google*.html; google-site-verification</td>
+<td>B; C</td>
+<td>File observed on B; panel reported one on C; provenance unproven</td>
+<td>Reconcile with authorized ownership</td>
 </tr>
 </tbody></table></div>
-
-<p>SHA-256 of the supplied NOX PHP artifact:</p>
+<p>SHA-256 of the single uploaded nox.php sample associated with Site C:</p>
 <pre><code>97ba51d7819b1c41bf79f931197659a027936a644904bd8bbfd89beae04c1214</code></pre></div></article></div></main>
 <footer><div class="container footer-grid"><div>© <span id="year"></span> Spaling Advisory Inc. All rights reserved.</div><div class="footer-links"><a href="../index.html#services">Services</a><a href="../index.html#difference">Approach</a><a href="../experience.html">Experience</a><a href="https://spaling.ca/fieldnotes.html">Field Notes</a><a href="mailto:michael@spaling.ca">Contact</a></div></div></footer>
 <script>
