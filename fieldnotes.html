@@ -250,31 +250,42 @@ transition:transform .2s ease}
 }
 
 
-/* Field Notes */
+/* Field Notes: a simple reading column. Header styles remain unchanged. */
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
-.notes-hero{padding:80px 0 56px;background:linear-gradient(140deg,var(--purple-soft),#fff 75%);border-bottom:1px solid var(--line)}
-.notes-hero h1{font-size:clamp(3rem,7vw,5.2rem);line-height:1.06;letter-spacing:-.055em;margin-bottom:22px}
-.notes-hero .intro{max-width:740px;color:var(--slate);font-size:1.18rem}
-.notes-byline{margin-top:25px;font-size:.9rem;color:var(--purple);font-weight:750}
-.notes-section{padding:56px 0 80px}.notes-layout{display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:42px;align-items:start}
-.notes-label{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:20px}
-.note-featured{border:1px solid var(--line);border-top:4px solid var(--purple);border-radius:var(--radius);padding:36px;background:#fff;box-shadow:var(--shadow-sm)}
-.note-meta{display:flex;flex-wrap:wrap;gap:8px 14px;color:var(--slate);font-size:.8rem;margin-bottom:16px}.note-category{color:var(--purple);font-weight:800}
-.note-featured h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.15;letter-spacing:-.035em;margin-bottom:17px}
-.note-excerpt{color:var(--slate)}.note-featured .note-excerpt{font-size:1.06rem}
-.note-read{margin-top:23px}.note-read summary{cursor:pointer;color:var(--purple);font-weight:800;list-style:none;display:inline-block}.note-read summary::-webkit-details-marker{display:none}.note-read summary::after{content:' +';margin-left:8px}.note-read[open] summary::after{content:' −'}
-.note-body{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}.note-body p+p{margin-top:15px}.note-body h3{margin:22px 0 8px;font-size:1.07rem}.note-takeaway{padding:18px;border-left:3px solid var(--orange);background:var(--purple-soft);margin-top:22px}
-.notes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}.note-card{padding:27px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}.note-card h2{font-size:1.4rem;line-height:1.25;letter-spacing:-.02em;margin-bottom:14px}
-.notes-sidebar{padding:26px;border-radius:var(--radius);background:var(--soft);border:1px solid var(--line)}.notes-sidebar h2{font-size:1.15rem;margin-bottom:12px}.notes-sidebar p{font-size:.93rem;color:var(--slate)}.notes-sidebar p+p{margin-top:14px}.notes-sidebar .text-link{display:inline-block;margin-top:18px}
-.notes-sample{display:inline-block;border:1px solid #ddd1ec;border-radius:999px;padding:4px 10px;color:var(--purple);font-size:.73rem;font-weight:750;background:var(--purple-soft)}
-.notes-disclaimer{font-size:.85rem;color:var(--slate);margin-top:28px;max-width:680px}
-@media(max-width:900px){.notes-layout{grid-template-columns:1fr}.notes-sidebar{max-width:none}}
-@media(max-width:680px){.notes-hero{padding:56px 0 40px}.notes-section{padding:36px 0 56px}.notes-grid{grid-template-columns:1fr}.note-featured{padding:26px}.note-card{padding:24px}.notes-layout{gap:28px}}
+.notes-hero{padding:64px 0 42px;border-bottom:1px solid var(--line)}
+.notes-hero h1{font-size:clamp(2.8rem,6vw,4.4rem);line-height:1.08;letter-spacing:-.05em;margin-bottom:20px}
+.notes-hero .intro{max-width:700px;color:var(--slate);font-size:1.12rem}
+.notes-byline{margin-top:20px;font-size:.9rem;color:var(--slate)}
+.notes-section{padding:12px 0 64px}.notes-list{max-width:780px}
+.note-entry{padding:34px 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+.note-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;font-size:.78rem;margin-bottom:12px}
+.note-category{color:var(--purple);font-weight:750}.notes-sample{color:var(--slate)}
+.note-entry h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;letter-spacing:-.025em;margin-bottom:14px}
+.note-excerpt{color:var(--slate);max-width:700px}.note-read{margin-top:18px}
+.note-read summary{cursor:pointer;color:var(--purple);font-weight:800;list-style:none;display:inline-block}
+.note-read summary::-webkit-details-marker{display:none}.note-read summary::after{content:' +';margin-left:8px}.note-read[open] summary::after{content:' −'}
+.note-body{margin-top:22px;border-top:1px solid var(--line);padding-top:22px;max-width:700px;overflow-wrap:anywhere}
+.note-body p+p{margin-top:16px}.note-body h3{margin:24px 0 8px;font-size:1.12rem}
+.note-body img{max-width:100%;height:auto}.note-body pre{overflow-x:auto}.note-body ul,.note-body ol{padding-left:24px;margin:16px 0}
+.note-takeaway{padding:18px;border-left:3px solid var(--orange);background:var(--purple-soft);margin-top:22px}
+.note-retry{display:inline-block;margin-top:10px;padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--purple);font:inherit;cursor:pointer}
+.notes-disclaimer{font-size:.85rem;color:var(--slate);margin-top:26px}
+@media(max-width:680px){.notes-hero{padding:44px 0 32px}.note-entry{padding:28px 0}.notes-section{padding-bottom:42px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important}}
 
 /* Field Notes matches the other navigation labels. */
 .nav-links a.fieldnotes-nav{color:inherit;font-weight:inherit}
 .nav-links a.fieldnotes-nav:hover{color:var(--purple)}
+
+/* Publication figures and evidence tables */
+.note-meta time{color:var(--slate)}
+.note-body figure{margin:24px 0 10px}.note-body figure img{display:block;width:auto;max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+.note-body .figure-caption{font-size:.85rem;color:var(--slate);margin:10px 0 24px}
+.note-body pre{padding:18px;background:var(--soft);border:1px solid var(--line);border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.84rem;line-height:1.6}
+.note-table-wrap{overflow-x:auto;margin:24px 0}.note-body table{width:100%;border-collapse:collapse;font-size:.87rem}.note-body th,.note-body td{padding:13px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.note-body th{background:var(--purple-soft);color:var(--purple-dark);font-weight:750}.note-body td{min-width:150px}
+.nox-capabilities{margin:24px 0;padding:22px;background:var(--soft);border:1px solid var(--line);border-radius:12px}
+.note-publication{max-width:900px;padding:54px 0 64px}.note-publication h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-.04em;margin:18px 0}.note-publication .note-body{max-width:100%}.note-publication .note-excerpt{max-width:760px}.note-author{margin-top:16px;color:var(--slate);font-size:.9rem}
+
 </style>
 </head>
 <body>
@@ -297,37 +308,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 <section class="notes-hero" aria-labelledby="notes-title"><div class="container">
 <div class="eyebrow">Observations from the work</div>
 <h1 id="notes-title">Field Notes</h1>
-<p class="intro">Interesting findings, unexpected questions, and practical lessons from cybersecurity advisory work. A place to share what caught my attention, why it matters, and what others can take from it.</p>
+<p class="intro">Interesting findings and practical lessons from cybersecurity advisory work. What caught my attention, why it matters, and what you can take from it.</p>
 <p class="notes-byline">Michael Spaling · Founder &amp; Principal Consultant</p>
 </div></section>
-<section class="notes-section" aria-label="Field Notes posts"><div class="container"><div class="notes-layout"><div>
-<p class="notes-label">The latest note</p>
-<!-- SAMPLE CONTENT: Replace these examples with approved posts before publishing.
-For each weekly post, duplicate a note-card article, give it a unique id, and add it first in notes-grid.
-Move the previous featured post into the grid and feature the newest one.
-Replace the sample badge with <time datetime="YYYY-MM-DD">Month D, YYYY</time>.
-Update category, estimated reading time, title, excerpt, body, and takeaway. -->
-<article class="note-featured" id="note-audit-logs">
-<div class="note-meta"><span class="note-category">Investigation &amp; evidence</span><span class="notes-sample">Example post</span></div>
-<h2>What does “accessed” actually tell us?</h2>
-<p class="note-excerpt">An audit event can look conclusive at first glance. The useful question is what the system recorded—and what that record actually allows us to conclude.</p>
-<details class="note-read"><summary>Read note</summary><div class="note-body">
-<p>This is sample editorial content to demonstrate the Field Notes format, rather than a report of a client engagement.</p>
-<h3>The observation</h3><p>A label such as “accessed” can invite a much broader interpretation than the available evidence supports. Before relying on it, we need to understand the event’s documented meaning, the application involved, and the surrounding activity.</p>
-<h3>Why it matters</h3><p>Technical findings often become decisions about people, disclosure, and organizational risk. Confidence should follow the evidence, including its limits.</p>
-<p class="note-takeaway"><strong>The takeaway:</strong> Separate what the record shows, what you infer, and what remains unknown.</p>
-</div></details></article>
-<p class="notes-label" style="margin-top:36px">More notes</p>
-<div class="notes-grid">
-<article class="note-card" id="note-ownership"><div class="note-meta"><span class="note-category">Governance</span><span class="notes-sample">Example post</span></div>
-<h2>A control needs someone who owns it.</h2><p class="note-excerpt">A policy can describe what should happen. The next question is who makes sure it actually does.</p>
-<details class="note-read"><summary>Read note</summary><div class="note-body"><p>This is sample content to demonstrate a shorter Field Note.</p><p>A useful review goes beyond asking whether a control exists. It asks who operates it, who checks it, and what happens when it fails.</p><p class="note-takeaway"><strong>The takeaway:</strong> Make accountability as visible as the control itself.</p></div></details></article>
-<article class="note-card" id="note-better-questions"><div class="note-meta"><span class="note-category">Advisory</span><span class="notes-sample">Example post</span></div>
-<h2>The question behind the question.</h2><p class="note-excerpt">“Is this secure?” is often the beginning of a conversation about what someone is trying to accomplish.</p>
-<details class="note-read"><summary>Read note</summary><div class="note-body"><p>This is sample content to demonstrate a shorter Field Note.</p><p>Before assessing a technology, clarify the decision it needs to support. What information is involved? Who depends on it? What would a failure mean for them?</p><p class="note-takeaway"><strong>The takeaway:</strong> Start with the people and the decision, then work through the technology.</p></div></details></article>
-</div><p class="notes-disclaimer">Example posts are included to show the layout. Published notes will focus on lessons that can be shared without identifying clients or exposing confidential information.</p>
-</div><aside class="notes-sidebar" aria-label="About Field Notes"><div class="eyebrow">From the field</div><h2>Worth writing down.</h2><p>Some of the most useful lessons start with a small detail: an unexpected result, an assumption worth checking, or a question that changes the conversation.</p><p>Field Notes brings those observations together, with new posts roughly once a week.</p><p>Cybersecurity, technology, and people. Always remember the human.</p><a class="text-link" href="mailto:michael@spaling.ca">Have a question? Get in touch →</a></aside>
-</div></div></section>
+<section class="notes-section" aria-label="Field Notes posts"><div class="container"><div class="notes-list">
+<!-- Add future notes above this article. Full text lives in notes/; this page contains summaries only. -->
+<article class="note-entry" id="nox-wordpress-compromise"><div class="note-meta"><span class="note-category">Website compromise &amp; investigation</span><time datetime="2026-10-12">October 12, 2026</time></div><h2>SEO Cloaking and NOX in a WordPress Compromise</h2><p class="note-excerpt">An apparent website defacement led to a JavaScript redirect, live SEO cloaking, and recovered PHP tools. The investigation shows why browser evidence, crawler responses, and file findings need to be tested separately.</p><details class="note-read" data-src="notes/nox-wordpress-compromise.html"><summary>Read note</summary><div class="note-body" aria-live="polite"><p><a class="text-link" href="notes/nox-wordpress-compromise.html">Open the full note →</a></p></div></details></article></div></div></section>
 <section class="contact" id="contact"><div class="container"><div class="contact-panel">
 <div class="contact-identity"><div class="contact-headshot"><img alt="Michael Spaling" loading="lazy" src="images/michael-spaling-headshot.jpg"/></div><div><h2>Let's start a conversation.</h2><p>Whether you're looking for advice, a sounding board, a speaker, or simply another perspective, I'd be happy to hear what you're working on.</p><span class="contact-role">Michael Spaling · Founder &amp; Principal Consultant</span></div></div>
 <div class="contact-actions"><a class="button button-primary" href="mailto:michael@spaling.ca">michael@spaling.ca</a></div>
@@ -339,6 +325,37 @@ const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('
 toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);toggle.textContent=open?'✕':'☰'});
 document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
+
+
+// Fetch only after opening a note; keep it in memory when it is closed/reopened.
+async function loadNote(details){
+  if(details.dataset.loaded || details.dataset.loading) return;
+  const body=details.querySelector('.note-body');
+  details.dataset.loading='true';body.setAttribute('aria-busy','true');
+  body.replaceChildren(Object.assign(document.createElement('p'),{textContent:'Loading note…'}));
+  try {
+    const response=await fetch(details.dataset.src);
+    if(!response.ok) throw new Error('Note unavailable');
+    const doc=new DOMParser().parseFromString(await response.text(),'text/html');
+    const content=doc.querySelector('[data-note-content]');
+    if(!content) throw new Error('Invalid note');
+    // Resolve relative image/link paths against the note file, not this page.
+    const base=new URL(details.dataset.src,document.baseURI);
+    content.querySelectorAll('[src],[href]').forEach(el=>{
+      ['src','href'].forEach(attr=>{const value=el.getAttribute(attr);if(value) el.setAttribute(attr,new URL(value,base).href);});
+    });
+    body.replaceChildren(...Array.from(content.childNodes));details.dataset.loaded='true';
+  } catch(error){
+    const message=Object.assign(document.createElement('p'),{textContent:'This note could not be loaded. Please try again.'});
+    const retry=Object.assign(document.createElement('button'),{type:'button',className:'note-retry',textContent:'Try again'});
+    retry.addEventListener('click',()=>loadNote(details));
+    const fallback=Object.assign(document.createElement('a'),{href:details.dataset.src,className:'text-link',textContent:'Open the full note →'});
+    body.replaceChildren(message,retry,document.createElement('br'),fallback);
+  } finally {delete details.dataset.loading;body.removeAttribute('aria-busy');}
+}
+document.querySelectorAll('.note-read[data-src]').forEach(details=>{
+  details.addEventListener('toggle',()=>{if(details.open) loadNote(details);});
+});
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "27dd8401f5654d9990675220d709b7ae"}'></script><!-- End Cloudflare Web Analytics -->    
 </body>
