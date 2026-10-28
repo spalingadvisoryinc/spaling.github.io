@@ -347,6 +347,17 @@ async function loadNote(details){
     content.querySelectorAll('[src],[href]').forEach(el=>{
       ['src','href'].forEach(attr=>{const value=el.getAttribute(attr);if(value) el.setAttribute(attr,new URL(value,base).href);});
     });
+    // Open unlinked screenshots at their original resolution, as in the Nox note.
+    content.querySelectorAll('img').forEach(img=>{
+      if(img.closest('a') || !img.getAttribute('src')) return;
+      const link=document.createElement('a');
+      link.href=img.getAttribute('src');
+      link.target='_blank';
+      link.rel='noopener noreferrer';
+      link.setAttribute('aria-label','Open full screenshot: '+(img.alt || 'Screenshot'));
+      img.before(link);
+      link.appendChild(img);
+    });
     body.replaceChildren(...Array.from(content.childNodes));details.dataset.loaded='true';
   } catch(error){
     const message=Object.assign(document.createElement('p'),{textContent:'This note could not be loaded. Please try again.'});
